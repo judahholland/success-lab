@@ -21,20 +21,20 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--primary: #057AC8;
+		--secondary: #fff;
+		--accent: #BCF0FB;
+	}
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: 'Instrument Sans';
+		background: var(--secondary);
 	}
 	code {
 		font-family:
