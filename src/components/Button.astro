@@ -1,10 +1,26 @@
-<a class="button" href="#">
-    Contact Us
+---
+interface Props {
+	text: string;
+	href: string;
+	width: string;
+}
+
+const { href, text, width } = Astro.props;
+---
+
+<a class="button" href={href} style=`width: ${width};`>
+    {text}
 </a>
 <style>
     .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 50px;
-        width: auto;
         background: var(--primary);
+        text-decoration: none;
+        color: var(--secondary);
+        font-size: 1.8rem;
+        border-radius: 5px;
     }
 </style>

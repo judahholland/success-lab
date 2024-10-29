@@ -3,7 +3,7 @@ import Button from "./Button.astro"
 ---
 
 <div class="header-wrapper">
-    <div class="header">
+    <header>
         <div class="logo-wrapper">
             <div class="logo">
                 <p>SL</p>
@@ -13,21 +13,26 @@ import Button from "./Button.astro"
 
         </div>
         <div class="button-wrapper">
-            <Button></Button>
+            <Button text="Contact Us" href="#" width="200px"/>
         </div>
-    </div>
+    </header>
 </div>
 <style>
     .header-wrapper {
         position: fixed;
         top: 0;
-        left: 0;
+        left: 50%;
         width: 100%;
+        max-width: 1200px;
+        margin: auto;
         padding: 2rem 0;
+        transform: translateX(-50%);
     }
-    .header {
+    header {
+        position: relative;
         display: flex;
         justify-content: space-between;
+        z-index: 100;
     }
     .logo-wrapper {
         width: 20%;
@@ -49,6 +54,6 @@ import Button from "./Button.astro"
         padding: 0 3rem;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
     }
 </style>

@@ -1,0 +1,43 @@
+---
+interface Props {
+	number: string;
+	text: string;
+	style: string;
+}
+
+const { number, text, style } = Astro.props;
+---
+
+<div class="hero-block" style=`${style}`>
+    <div class="block-icon">
+        <slot/>
+    </div>
+    <div class="block-text">
+        <h3>{number}</h3>
+        <p>{text}</p>
+    </div>
+</div>
+<style>
+    .hero-block {
+		display: flex;
+		gap: 2rem;
+		padding: 3rem;
+		background: var(--secondary);
+		border-radius: 1rem;
+		border: 1px solid #ccc;
+	}
+	.block-icon {
+		width: 8rem;
+		height: 8rem;
+		display: flex;
+		align-items: center;
+		padding: 1.5rem;
+		background: var(--primary);
+		border-radius: .5rem;
+	}
+	.block-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>
