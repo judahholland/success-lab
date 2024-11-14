@@ -1,0 +1,91 @@
+---
+import Image from 'astro/components/Image.astro'
+import ServiceIcon from '../assets/service-icon.png'
+---
+
+<div class="service-cards">
+    <div class="service-card out">
+        <Image src={ServiceIcon} alt='service icon'/>
+        <h3 class="service-title">Service 1</h3>
+        <p class="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="number">
+            <p>01</p>
+        </div>
+    </div>
+    <div class="service-card">
+        <Image src={ServiceIcon} alt='service icon'/>
+        <h3 class="service-title">Service 2</h3>
+        <p class="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="number">
+            <p>02</p>
+        </div>
+    </div>
+    <div class="service-card">
+        <Image src={ServiceIcon} alt='service icon'/>
+        <h3 class="service-title">Service 3</h3>
+        <p class="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="number">
+            <p>03</p>
+        </div>
+    </div>
+</div>
+<style>
+    .service-cards {
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+    }
+    .service-card {
+        width: 33.3333%;
+        position: relative;
+        border-radius: 1.5rem;
+        border: 1px solid #ccc;
+        padding: 4rem 4rem 16rem 4rem;
+        transition: ease .3s;
+    }
+    .service-card > img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+    }
+    .service-title {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+    .service-text {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+    .number {
+        position: absolute;
+        right: 4rem;
+        bottom: 5rem;
+    }
+    .number > p {
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: var(--light-accent);
+    }
+    .out {
+        width: 50%;
+    }
+</style>
+<script>
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach((item) => {
+        const text = document.querySelectorAll(".service-text")
+
+        item.addEventListener("mouseenter", () => {
+            cards.forEach((otherCard) => {
+                const text = document.querySelectorAll(".service-text")
+                if (otherCard !== item && otherCard.classList.contains("out")) {
+                    otherCard.classList.remove("out");
+                    
+                }
+            });
+
+            item.classList.add("out");
+        })
+    })
+</script>

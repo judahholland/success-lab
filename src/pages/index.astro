@@ -3,10 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Button from '../components/Button.astro';
 import Hero_Block from '../components/Hero_Block.astro'
+import Service_Cards from '../components/Service_Cards.astro'
 import Image from 'astro/components/Image.astro';
 import Toke_hero from '../assets/dr-toke.png';
 import Bobby_hero from '../assets/bobby.png'
 import Bg_circle_1 from '../assets/anim-2.png';
+import About_Img from '../assets/about-img.jpeg'
+import Training from '../assets/training.png'
 ---
 
 <Layout title="Success Lab">
@@ -28,7 +31,7 @@ import Bg_circle_1 from '../assets/anim-2.png';
 						<div class="img-gradient"/>
 					</div>
 					<Hero_Block
-						style="position:absolute; top:2rem; left:-4rem;"
+						style="position:absolute; top:3rem; left:-4rem;"
 						number="86%"
 						text="Personal Growth"
 					>
@@ -91,6 +94,38 @@ import Bg_circle_1 from '../assets/anim-2.png';
 				</div>
 			</div>
 		</div>
+		<div class="about-wrapper">
+			<div class="about">
+				<div class="about-img">
+					<Image src={About_Img} alt='Business Speaker'/>
+				</div>
+				<div class="about-txt">
+					<div class="about-txt-wrapper">	
+						<h2>Lorem ipsum dolor sit amet</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					</div>
+					<div class="about-features">
+						<div class="about-feature">
+							<Image src={Training} alt='Training'/>
+							<h4>Success Leader Training</h4>
+						</div>
+						<div class="about-feature">
+							<p>3.6 X</p>
+							<h4>Leadership Growth</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="services">
+				<div class="service-txt">
+					<p class="service-tag">Our Services</p>
+					<h2>Lorem ipsum dolor sit amet, <br>consectetur adipiscing</h2>
+				</div>
+				<Service_Cards/>
+			</div>
+		</div>
 	</main>
 </Layout>
 
@@ -100,7 +135,7 @@ import Bg_circle_1 from '../assets/anim-2.png';
 	}
 	.wrapper {
 		margin: auto;
-		max-width: 1200px;
+		max-width: 1350px;
 		width: 93%;
 	}
 	.hero {
@@ -125,6 +160,7 @@ import Bg_circle_1 from '../assets/anim-2.png';
 		position: relative;
 		margin-top: 2rem;
 		margin-bottom: 2rem;
+		padding-right: 8rem;
 		z-index: 10;
 	}
 	.hero-images-wrapper {
@@ -175,7 +211,7 @@ import Bg_circle_1 from '../assets/anim-2.png';
 	.hero-images::before {
 		position: absolute;
 		left: 50%;
-		top: 50%;
+		top: 55%;
 		content: "";
 		height: 600px;
 		width: 600px;
@@ -200,7 +236,7 @@ import Bg_circle_1 from '../assets/anim-2.png';
 		height: auto;
 	}
 	.features-wrapper {
-		margin-left: calc((100% - 1200px)/2);
+		margin-left: calc((100% - 1350px)/2);
 		width: auto;
 	}
 	.features {
@@ -312,5 +348,86 @@ import Bg_circle_1 from '../assets/anim-2.png';
 		width: 1.5rem;
 		height: 1.5rem;
 		background: url('../assets/curve.svg');
+	}
+	.about-wrapper {
+		background: linear-gradient(to right, transparent 50%, #f6f6f6 50%);
+	}
+	.about {
+		width: 93%;
+		max-width: 1350px;
+		margin:auto;
+		display: flex;
+		gap: 4rem;
+	}
+	.about-img {
+		width: 58.3333%;
+		height: 600px;
+		border-radius: 15px;
+		padding-top: 8rem;
+	}
+	.about-img > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 15px 15px 0 15px;
+	}
+	.about-txt {
+		width: 41.6666%;
+		padding-top: 8rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.about-txt-wrapper > p {
+		margin-top: 2rem;
+	}
+	.about-features {
+		display: flex;
+		width: 100%;
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+		border-top: 1px solid #ccc;
+	}
+	.about-feature {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+	.about-feature > img {
+		width: 60px;
+		height: 60px;
+		object-fit: contain;
+	}
+	.about-feature > h4 {
+		font-size: 2rem;
+	}
+	.about-feature p {
+		color: var(--primary);
+		font-size: 5rem;
+		font-weight: 700;
+		text-wrap: nowrap;
+	}
+	.services {
+		padding: 8rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4rem;
+	}
+	.service-txt {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	.service-tag {
+		display: inline-block;
+		background: var(--light-accent);
+		padding: .5rem 1rem;
+		border-radius: 1rem;
+		width: auto
+	}
+	.service-txt > h2 {
+		text-align: center;
 	}
 </style>
