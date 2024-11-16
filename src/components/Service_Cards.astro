@@ -7,7 +7,7 @@ import ServiceIcon from '../assets/service-icon.png'
     <div class="service-card out">
         <Image src={ServiceIcon} alt='service icon'/>
         <h3 class="service-title">Service 1</h3>
-        <p class="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="service-text show">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="number">
             <p>01</p>
         </div>
@@ -37,6 +37,7 @@ import ServiceIcon from '../assets/service-icon.png'
     }
     .service-card {
         width: 33.3333%;
+        height: inherit;
         position: relative;
         border-radius: 1.5rem;
         border: 1px solid #ccc;
@@ -55,6 +56,9 @@ import ServiceIcon from '../assets/service-icon.png'
     .service-text {
         font-size: 1.6rem;
         margin-top: 2rem;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(2rem);
     }
     .number {
         position: absolute;
@@ -69,23 +73,38 @@ import ServiceIcon from '../assets/service-icon.png'
     .out {
         width: 50%;
     }
+    .show {
+        visibility: visible;
+        animation: show-text .7s forwards;
+    }
+    @keyframes show-text {
+        40% {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 <script>
     const cards = document.querySelectorAll(".service-card");
 
     cards.forEach((item) => {
-        const text = document.querySelectorAll(".service-text")
 
         item.addEventListener("mouseenter", () => {
             cards.forEach((otherCard) => {
-                const text = document.querySelectorAll(".service-text")
                 if (otherCard !== item && otherCard.classList.contains("out")) {
                     otherCard.classList.remove("out");
-                    
+                    const text = otherCard.querySelector(".service-text");
+                    if (text) text.classList.remove('show');
                 }
             });
 
             item.classList.add("out");
+            const text = item.querySelector(".service-text")
+            if (text) text.classList.add('show');
         })
     })
 </script>
