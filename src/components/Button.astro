@@ -14,13 +14,41 @@ const { href, text, width } = Astro.props;
 <style>
     .button {
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         height: 50px;
-        background: var(--primary);
         text-decoration: none;
         color: var(--secondary);
         font-size: 1.8rem;
         border-radius: 5px;
+        overflow: hidden;
+    }
+    .button:hover {
+        background: transparent;
+    }
+    .button::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        z-index: -1;
+    }
+    .button::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--dark-accent);
+        z-index: -1;
+        transition: ease .3s;
+    }
+    .button:hover::after {
+        left: 0;
     }
 </style>

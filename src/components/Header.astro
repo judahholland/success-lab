@@ -1,12 +1,14 @@
 ---
 import Button from "./Button.astro"
+import Image from "astro/components/Image.astro"
+import Logo from "../assets/success-lab-logo.png"
 ---
 
 <div class="header-wrapper">
     <header>
         <div class="logo-wrapper">
             <div class="logo">
-                <p>SL</p>
+                <Image src={Logo} alt="Logo">
             </div>
         </div>
         <div class="nav-wrapper">
@@ -42,12 +44,11 @@ import Button from "./Button.astro"
 
     }
     .logo {
-        width: auto;
-        padding: 0 3rem;
+        width: 100%;
     }
-    .logo p {
-        font-size: 50px;
-        font-weight: 800;
+    .logo img {
+        width: auto;
+        height: 75px;
     }
     .nav-wrapper {
         width: 80%;

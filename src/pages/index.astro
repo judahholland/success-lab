@@ -6,7 +6,7 @@ import Hero_Block from '../components/Hero_Block.astro'
 import Service_Cards from '../components/Service_Cards.astro'
 import Image from 'astro/components/Image.astro';
 import Toke_hero from '../assets/dr-toke.png';
-import Bobby_hero from '../assets/bobby.png'
+import Bobby_hero from '../assets/bobby-cutout.png'
 import Bg_circle_1 from '../assets/anim-2.png';
 import About_Img from '../assets/about-img.jpeg'
 import Training from '../assets/training.png'
@@ -176,14 +176,14 @@ import Training from '../assets/training.png'
 		position: absolute;
 		left: -8rem;
 		bottom: 0;
-		width: 28rem;
+		width: 33rem;
 		height: auto;
 	}
 	.bobby-img {
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		width: 45rem;
+		width: 37rem;
 		height: auto;
 	}
 	.hero-img::after {
@@ -234,6 +234,7 @@ import Training from '../assets/training.png'
 		left: -10rem;
 		width: 20rem;
 		height: auto;
+		z-index: -1;
 	}
 	.features-wrapper {
 		margin-left: calc((100% - 1350px)/2);
