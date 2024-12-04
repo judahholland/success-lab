@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Button from '../components/Button.astro';
+import FormButton from '../components/FormButton.astro';
 import Hero_Block from '../components/Hero_Block.astro'
 import Service_Cards from '../components/Service_Cards.astro'
 import Image from 'astro/components/Image.astro';
@@ -191,14 +192,17 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 						</div>
 					</div>
 				</div>
-				<div class="contact-form">
+				<div class="contact-form-wrapper">
 					<form class="contact-form">
 						<input class="form-control" type="text" id="name" name="name" placeholder="Name*" required/>
-						<div class="form-row"> 
+						<div class="form-row">
 							<input class="form-control" type="email" id="email" name="email" placeholder="Email*" required/>
 							<input class="form-control" type="text" id="phone" name="phone" placeholder="Phone*" required/>
 						</div>
 						<textarea class="form-control" id="comments" name="comments" placeholder="Tell us about your event"></textarea>
+						<button class="submit-button" name="submit" type="submit" id="submit">
+							<FormButton text="Submit" width="200px"/>
+						</button>
 					</form>
 				</div>
 			</div>
@@ -316,7 +320,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		z-index: -1;
 	}
 	.features-wrapper {
-		margin-left: calc((100% - 1350px)/2);
+		margin-left: calc((100% - 93%)/2);
 		width: auto;
 	}
 	.features {
@@ -628,7 +632,6 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	}
 	.contact {
 		display: flex;
-		
 	}
 	.contact-info {
 		padding: 12rem 0;
@@ -637,9 +640,9 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	.contact-heading {
 		margin-bottom: 5rem;
 	}
-	.contact-form {
+	.contact-form-wrapper {
 		width: 50%;
-		height: 50vh;
+		padding: 12rem 0;
 	}
 	.contact-link {
 		display: flex;
@@ -673,5 +676,59 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	}
 	.contact-text a:hover {
 		color: var(--primary);
+	}
+	.contact-form {
+		padding: 6rem;
+		margin-left: 4rem;
+		background: var(--light-accent);
+		border-radius: 2.5rem;
+	}
+	input {
+		min-height: 50px;
+	}
+	input, textarea {
+		font-family: 'Outfit';
+		margin-bottom: 1.5rem;
+	}
+	textarea {
+		resize: none;
+	}
+	input::placeholder, textarea::placeholder {
+		color: var(--text-color);
+	}
+	input:focus, textarea:focus {
+		border-bottom-color: var(--primary);
+		outline: 0;
+	}
+	.form-control {
+		width: 100%;
+		display: block;
+		line-height: 1.5;
+		font-size: 1.8rem;
+		color: var(--text-color);
+		background: transparent;
+		padding: 1.5rem 0;
+		border: none;
+		border-bottom: 2px solid #ccc;
+		transition: border-color .3s ease;
+	}
+	.form-row {
+		display: flex;
+		gap: 3rem;
+	}
+	.submit-button {
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
+
+	/* Desktop Large Styles*/
+	@media screen and (min-width: 1350px) {
+		.features-wrapper {
+			margin-left: calc((100% - 1350px) /2);
+		}
+		.bio-wrapper {
+			margin-left: calc((100% - 1350px) /2);
+		}
 	}
 </style>
