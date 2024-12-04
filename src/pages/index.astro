@@ -10,6 +10,8 @@ import Bobby_hero from '../assets/bobby-cutout.png'
 import Bg_circle_1 from '../assets/anim-2.png';
 import About_Img from '../assets/about-img.jpeg'
 import Training from '../assets/training.png'
+import TokeBio from '../assets/toke-bio.png'
+import BobbyBio from '../assets/bobby-headshot.webp'
 ---
 
 <Layout title="Success Lab">
@@ -40,7 +42,7 @@ import Training from '../assets/training.png'
 					   	</svg>
 					</Hero_Block>
 					<Hero_Block
-						style="position:absolute; bottom:4rem; right:-4rem;"
+						style="position:absolute; bottom:4rem; right:-4rem; z-index: 5;"
 						number="86%"
 						text="Personal Growth"
 					>
@@ -120,10 +122,85 @@ import Training from '../assets/training.png'
 		<div class="wrapper">
 			<div class="services">
 				<div class="service-txt">
-					<p class="service-tag">Our Services</p>
+					<p class="tag">Our Services</p>
 					<h2>Lorem ipsum dolor sit amet, <br>consectetur adipiscing</h2>
 				</div>
 				<Service_Cards/>
+			</div>
+		</div>
+		<div class="bios-wrapper">
+			<div class="wrapper">
+				<div class="bios-heading">
+					<h2>Meet Our <br>Team of Experts</h2>
+				</div>
+			</div>
+			<div class="bio-wrapper">
+				<div class="toke-bio">
+					<div class="bio-image">
+						<Image src={TokeBio} alt='Dr. Fred Toke'/>
+					</div>
+					<div class="bio-text">
+						<h3>Dr. Fred Toke</h3>
+						<p>Dr. Fred Toke, Psy.D., is the Chief Operating Officer of People for Care and Learning, an international humanitarian organization committed to breaking the cycle of poverty. Based in Mobile, Alabama, USA, Dr. Toke is a clinical psychologist with a global perspective, having served the U.S., European, and Asian communities in leadership, personal growth, and mental health.</p>
+						<p>His academic contributions include teaching at Singapore's Nanyang Technological University (ranked 14th in the World) and the University of Malaysia's Faculty of Medicine in Sabah. Additionally, Dr. Toke has provided executive training to leaders from top multinational companies, including Apple, Ernst & Young, Abbott Laboratories, Singapore Airlines, UOB Bank, and many others.</p>
+						<p>Dr. Toke is known for his engaging and humorous presentation style, which always entertains and engages his audience. He regularly speaks at Mental Health Forums, where his insightful and entertaining talks leave a lasting impression. His TEDx talk, "Winning Over Worries," is another testament to his ability to inspire and uplift audiences.</p>
+						<p>In recognition of his work, Dr. Toke has been honored with the prestigious Asia-Pacific Brands Award and was a nominee for the 2010 Singapore Spirit of Enterprise Award. He is also an author of books such as When Life Hands You the Shorter End of the Stick, Life Simplified, and his latest, Supercharge Your Brain!</p>
+					</div>
+				</div>
+				<div class="bobby-bio">
+					<div class="bio-text">
+						<h3>Bobby Holland</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<div class="bio-image">
+						<Image src={BobbyBio} alt='Bobby Holland'/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contact-wrapper">
+			<div class="wrapper contact">
+				<div class="contact-info">
+					<div class="contact-heading">
+						<p class="tag">Have Questions?</p>
+						<h2>Contact Information</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet, consectetur adipiscing elit</p>
+					</div>
+					<div class="contact-link">
+						<div class="contact-icon">
+							<svg viewBox="-5.0 -5.0 110.0 110.0">
+								<path d="m85.039 69.398-10.781-8.5586c-2.2109-1.7617-5.3984-1.5312-7.3516 0.51172l-4.9297 5.1914c-1.5703 1.6484-3.8516 1.6484-6.1016 1.2617-7.3906-1.2891-19.391-12.289-21.68-21.68-0.53906-2.2188-0.39844-4.5312 1.2617-6.1016l5.1914-4.9297c2.0508-1.9492 2.2695-5.1289 0.51172-7.3516l-8.5586-10.781c-2.0312-2.5508-5.8203-2.7695-8.1289-0.46094l-6.5781 6.5781c-5.3906 5.3906-5.3086 13.16-2.7891 20.352 7.3984 21.078 30.398 40.078 43.48 43.48 7.3789 1.9219 14.961 2.6016 20.352-2.7891l6.5781-6.5781c2.3008-2.3008 2.0898-6.1016-0.46094-8.1289z"/>
+							</svg>
+						</div>
+						<div class="contact-text">
+							<h4>Phone</h4>
+							<a href="#">(555) 555-5555</a>
+						</div>
+					</div>
+					<div class="contact-link">
+						<div class="contact-icon" style="background-color: var(--dark-accent);">
+							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -5.0 110.0 110.0">
+								<path d="m30.906 50-24.156 25.312v-50.625c5.25 5.5 15.469 16.219 24.156 25.312zm25.281 13.531c-3.4336 3.375-8.9414 3.375-12.375 0-1.9375-2.0312-5-5.25-8.5938-9l-24.125 25.312h77.812l-24.125-25.312c-3.5938 3.7812-6.6875 7-8.5938 9zm-4.5312-4.3125c6.9375-7.25 29-30.375 37.281-39.062h-77.875c8.375 8.7812 30.219 31.688 37.281 39.062 0.4375 0.44141 1.0352 0.69141 1.6562 0.69141s1.2188-0.25 1.6562-0.69141zm17.438-9.2188 24.156 25.312v-50.656c-5.1562 5.4375-15.406 16.188-24.156 25.344z"/>
+							</svg>
+						</div>
+						<div class="contact-text">
+							<h4>Email</h4>
+							<a href="#">example@email.com</a>
+						</div>
+					</div>
+				</div>
+				<div class="contact-form">
+					<form class="contact-form">
+						<input class="form-control" type="text" id="name" name="name" placeholder="Name*" required/>
+						<div class="form-row"> 
+							<input class="form-control" type="email" id="email" name="email" placeholder="Email*" required/>
+							<input class="form-control" type="text" id="phone" name="phone" placeholder="Phone*" required/>
+						</div>
+						<textarea class="form-control" id="comments" name="comments" placeholder="Tell us about your event"></textarea>
+					</form>
+				</div>
 			</div>
 		</div>
 	</main>
@@ -423,7 +500,7 @@ import Training from '../assets/training.png'
 		align-items: center;
 		flex-direction: column;
 	}
-	.service-tag {
+	.tag {
 		display: inline-block;
 		background: var(--light-accent);
 		padding: .5rem 1rem;
@@ -432,5 +509,169 @@ import Training from '../assets/training.png'
 	}
 	.service-txt > h2 {
 		text-align: center;
+	}
+	.bios-wrapper {
+		width: 100%;
+		position: relative;
+		background: var(--dark-accent);
+	}
+	.bios-wrapper::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: url('../assets/sl-bg.png');
+		background-size: 250px;
+		background-repeat: no-repeat;
+
+	}
+	.bios-heading {
+		padding: 12rem 8rem;
+		position: relative;
+	}
+	.bios-heading h2{
+		color: var(--secondary);
+	}
+	.bio-wrapper {
+		position: relative;
+		width: auto;
+		margin-left: calc((100% - 93%) / 2);
+		background: var(--secondary);
+		border-radius: 25px 0 0 0;
+	}
+	.toke-bio {
+		width: 100%;
+		position: relative;
+		display: flex;
+		gap: 4rem;
+		padding: 12rem;
+	}
+	.bio-image {
+		width: 40%;
+		position: relative;
+	}
+	.toke-bio .bio-image::before {
+		position: absolute;
+		content: "";
+		top: -8rem;
+		left: -10rem;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border: 50px solid var(--primary);
+		opacity: .04;
+		z-index: 1;
+	}
+	.toke-bio .bio-image::after {
+		position: absolute;
+		content: "";
+		top: -8rem;
+		left: -10rem;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border: 1px solid var(--primary);
+		z-index: 1;
+	}
+	.bio-image img {
+		position: relative;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 25px;
+		z-index: 3;
+	}
+	.bio-text {
+		width: 60%;
+	}
+	.bio-text h3 {
+		margin-bottom: 2rem;
+	}
+	.bio-text p {
+		margin-bottom: 1.5rem;
+	}
+	.bobby-bio {
+		width: 100%;
+		position: relative;
+		display: flex;
+		gap: 4rem;
+		padding: 12rem;
+		background-color: #f6f6f6;
+	}
+	.bobby-bio .bio-image::before {
+		position: absolute;
+		content: "";
+		top: -8rem;
+		right: -10rem;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border: 50px solid var(--primary);
+		opacity: .04;
+		z-index: 1;
+	}
+	.bobby-bio .bio-image::after {
+		position: absolute;
+		content: "";
+		top: -8rem;
+		right: -10rem;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border: 1px solid var(--primary);
+		z-index: 1;
+	}
+	.contact-wrapper {
+		background: linear-gradient(to right, var(--secondary) 50%, var(--dark-accent) 50%);
+	}
+	.contact {
+		display: flex;
+		
+	}
+	.contact-info {
+		padding: 12rem 0;
+		width: 50%;
+	}
+	.contact-heading {
+		margin-bottom: 5rem;
+	}
+	.contact-form {
+		width: 50%;
+		height: 50vh;
+	}
+	.contact-link {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	.contact-icon {
+		width: 6.5rem;
+		height: 6.5rem;
+		border-radius: 50%;
+		background: var(--primary);
+		padding: 1rem;
+	}
+	.contact-icon svg {
+		width: 100%;
+		height: 100%;
+		fill: var(--secondary);
+	}
+	.contact-text {
+		margin-bottom: 1rem;
+	}
+	.contact-text h4 {
+		font-size: 2.4rem;
+		margin-bottom: 1rem;
+	}
+	.contact-text a {
+		font-size: 1.8rem;
+		color: var(--text-color);
+		transition: ease .2s;
+	}
+	.contact-text a:hover {
+		color: var(--primary);
 	}
 </style>
