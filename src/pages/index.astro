@@ -205,6 +205,9 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 						</button>
 					</form>
 				</div>
+				<div class="copyright">
+					<p>&copy; <span id="copyright-year"></span> All Rights Reserved | Success Lab</p>
+				</div>
 			</div>
 		</div>
 	</main>
@@ -637,6 +640,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	}
 	.contact {
 		display: flex;
+		position: relative;
 	}
 	.contact-info {
 		padding: 12rem 0;
@@ -725,6 +729,16 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		background: none;
 		border: none;
 		box-shadow: none;
+	}
+	.copyright {
+		position: absolute;
+		width: 50%;
+		height: auto;
+		left: 0;
+		bottom: 0;
+	}
+	.copyright p {
+		font-size: 1.4rem;
 	}
 	/* Desktop Large Styles*/
 	@media screen and (min-width: 1350px) {
@@ -815,6 +829,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		}
 		.about-features {
 			gap: 2rem;
+			border: none;
 		}
 		.about-feature {
 			padding: 4rem 0;
@@ -834,6 +849,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		.bobby-bio {
 			flex-direction: column-reverse;
 			padding: 6rem;
+			overflow: hidden;
 		}
 		.bobby-bio .bio-image::before {
 			top: -13rem;
@@ -868,5 +884,27 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		.form-row {
 			flex-direction: column;
 		}
+		.copyright  {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	/* Mobile Small Styles */
+	@media screen and (max-width: 767px) {
+		.about-image {
+			height: 400px;
+		}
+		.bios-heading {
+			padding: 12rem 0;
+		}
+		.toke-bio {
+			padding: 2rem;
+		}
+		.bobby-bio {
+			padding: 2rem;
+		}
 	}
 </style>
+<script is:inline>
+	document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+</script>
