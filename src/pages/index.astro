@@ -19,7 +19,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	<Header/>
 	<main>
 		<div class="wrapper">
-			<div class="hero">
+			<div class="hero mobile-wrap">
 				<div class="hero-text">
 					<h5 class="hero-tagline">Success Lab</h5>
 					<h1 class="hero-heading">Lorem <span style="color: var(--primary);">ipsum</span> dolor sit amet sed do</h1>
@@ -43,7 +43,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 					   	</svg>
 					</Hero_Block>
 					<Hero_Block
-						style="position:absolute; bottom:4rem; right:-4rem; z-index: 5;"
+						style="position:absolute; bottom:4rem; right:0; z-index: 5;"
 						number="86%"
 						text="Personal Growth"
 					>
@@ -55,14 +55,14 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 			</div>
 		</div>
 		<div class="features-wrapper">
-			<div class="features">
+			<div class="features mobile-wrap">
 				<div class="feature-main">
 					<h3>63K</h3>
 					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 					<div class="path"/>
 				</div>
-				<div class="feature-cards">
+				<div class="feature-cards mobile-wrap">
 					<div class="feature-card">
 						<div class="feature-icon">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="white"><path d="M43.32,94.5c32.7.12,50.11-39.62,27.755-63.453l1.8-1.8H83.271a1.666,1.666,0,0,0,.528-.1,1.856,1.856,0,0,0,.437-.252l9.73-8.194a1.511,1.511,0,0,0-.759-2.633l-8.031-1.119,6.593-6.593a1.5,1.5,0,0,0-2.122-2.121l-6.593,6.593L81.935,6.793a1.546,1.546,0,0,0-.454-.873,1.51,1.51,0,0,0-2.179.114l-8.2,9.729a1.628,1.628,0,0,0-.352.966v10.4l-28.5,28.5a1.5,1.5,0,0,0,2.121,2.121l8.974-8.974C60.01,56.9,53.83,69.626,43.32,69.48a12.8,12.8,0,1,1,0-25.59,12.565,12.565,0,0,1,5.3,1.152,1.5,1.5,0,0,0,1.256-2.725C39.784,37.445,27.272,45.438,27.521,56.68a15.817,15.817,0,0,0,15.8,15.8c13.2.1,20.68-15.765,12.169-25.849l5.778-5.777c13.665,15.218,2.5,39.885-17.947,39.8A24,24,0,0,1,19.351,56.68c-.169-18.9,21.639-30.588,37.243-19.934a1.5,1.5,0,0,0,1.672-2.492C40.707,22.261,16.158,35.4,16.351,56.68A27,27,0,0,0,43.32,83.65c23.133.068,35.577-27.79,20.09-44.939l5.543-5.543c20.471,21.97,4.4,58.451-25.633,58.332A34.859,34.859,0,0,1,8.5,56.68C8.253,28.272,41.851,11.545,64.3,28.915a1.5,1.5,0,0,0,1.814-2.39C41.729,7.653,5.228,25.823,5.5,56.68A37.863,37.863,0,0,0,43.32,94.5ZM89.459,20.572l-6.736,5.673H75.877l6.64-6.64Zm-15.7,3.552V17.277l5.673-6.736.968,6.942Z"/></svg>
@@ -98,7 +98,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 			</div>
 		</div>
 		<div class="about-wrapper">
-			<div class="about">
+			<div class="about mobile-wrap">
 				<div class="about-img">
 					<Image src={About_Img} alt='Business Speaker'/>
 				</div>
@@ -108,11 +108,11 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					</div>
 					<div class="about-features">
-						<div class="about-feature">
+						<div class="about-feature mobile-wrap">
 							<Image src={Training} alt='Training'/>
 							<h4>Success Leader Training</h4>
 						</div>
-						<div class="about-feature">
+						<div class="about-feature mobile-wrap">
 							<p>3.6 X</p>
 							<h4>Leadership Growth</h4>
 						</div>
@@ -136,7 +136,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 				</div>
 			</div>
 			<div class="bio-wrapper">
-				<div class="toke-bio">
+				<div class="toke-bio mobile-wrap">
 					<div class="bio-image">
 						<Image src={TokeBio} alt='Dr. Fred Toke'/>
 					</div>
@@ -162,7 +162,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 			</div>
 		</div>
 		<div class="contact-wrapper">
-			<div class="wrapper contact">
+			<div class="wrapper contact mobile-wrap">
 				<div class="contact-info">
 					<div class="contact-heading">
 						<p class="tag">Have Questions?</p>
@@ -309,6 +309,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		height: 50%;
 		left: -20%;
 		bottom: 0;
+		z-index: 5;
 		background: linear-gradient(0deg, white, transparent);
 	}
 	.bg-circle-1 {
@@ -554,6 +555,7 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	}
 	.bio-image {
 		width: 40%;
+		height: 650px;
 		position: relative;
 	}
 	.toke-bio .bio-image::before {
@@ -582,8 +584,9 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 	.bio-image img {
 		position: relative;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		object-fit: cover;
+		object-position: 50% 0;
 		border-radius: 25px;
 		z-index: 3;
 	}
@@ -721,7 +724,6 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		border: none;
 		box-shadow: none;
 	}
-
 	/* Desktop Large Styles*/
 	@media screen and (min-width: 1350px) {
 		.features-wrapper {
@@ -729,6 +731,138 @@ import BobbyBio from '../assets/bobby-headshot.webp'
 		}
 		.bio-wrapper {
 			margin-left: calc((100% - 1350px) /2);
+		}
+	}
+
+	/* Mobile Styles */
+	@media screen and (max-width: 900px) {
+		.hero-text {
+			width: 100%;
+			text-align: center;
+			align-items: center;
+			padding-bottom: 6rem;
+		}
+		.hero-text p {
+			padding-right: 0;
+		}
+		.hero-images-wrapper {
+			width: 100%;
+		}
+		.hero-images {
+			display: flex;
+		}
+		.hero-images::before {
+			width: 80vw;
+			height: 80vw;
+		}
+		.hero-images::after {
+			width: 60vw;
+			height: 60vw;
+			border: 80px solid var(--primary);
+		}
+		.toke-img {
+			position: relative;
+			width: 50%;
+			left: auto;
+		}
+		.bobby-img {
+			position: relative;
+			width: 50%;
+		}
+		.hero-block {
+			left: 0;
+			top: auto;
+			bottom: 5rem;
+			z-index: 10;
+		}
+		.hero-blog:nth-of-type(2) {
+			right: 0;
+		}
+		.mobile-wrap {
+			flex-direction: column;
+		}
+		.feature-main {
+			width: 96%;
+		}
+		.feature-cards {
+			width: 100%;
+			gap: 4rem;
+		}
+		.feature-card {
+			width: 100%;
+			padding: 0;
+		}
+		.feature-card:nth-of-type(2) {
+			border: none;
+		}
+		.about-wrapper {
+			background: linear-gradient(to right,transparent 70%,#f6f6f6 70%);
+		}
+		.about-img {
+			width: 100%;
+		}
+		.about-img img {
+			border-radius: 15px;
+			object-position: 100% 50%;
+		}
+		.about-txt {
+			width: 100%;
+			padding-top: 4rem;
+		}
+		.about-features {
+			gap: 2rem;
+		}
+		.about-feature {
+			padding: 4rem 0;
+			background: var(--secondary);
+			border-radius: 1.5rem;
+			text-align: center;
+			-webkit-box-shadow: 0px 4px 15px 4px rgba(128,136,140,0.33);
+			box-shadow: 0px 4px 15px 4px rgba(128,136,140,0.33);
+		}
+		.about-feature img {
+			height: 90px;
+		}
+		.toke-bio {
+			padding: 6rem;
+			overflow: hidden;
+		}
+		.bobby-bio {
+			flex-direction: column-reverse;
+			padding: 6rem;
+		}
+		.bobby-bio .bio-image::before {
+			top: -13rem;
+			right: 0;
+		}
+		.bobby-bio .bio-image::after {
+			top: -13rem;
+			right: 3rem;
+		}
+		.bio-image {
+			width: 100%;
+			height: 500px;
+		}
+		.bio-text {
+			width: 100%;
+		}
+		.contact-wrapper {
+			background: var(--secondary);
+		}
+		.contact-info {
+			width: 100%;
+			padding-top: 6rem;
+			padding-bottom: 0;
+		}
+		.contact-form-wrapper {
+			width: 100%;
+			padding: 0rem 0 6rem 0;
+		}
+		.contact-form {
+			margin: 0;
+		}
+		.form-row {
+			flex-direction: column;
 		}
 	}
 </style>
