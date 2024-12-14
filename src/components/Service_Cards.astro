@@ -3,7 +3,7 @@ import Image from 'astro/components/Image.astro'
 import ServiceIcon from '../assets/service-icon.png'
 ---
 
-<div class="service-cards mobile-wrap">
+<div class="service-cards">
     <div class="service-card out">
         <Image src={ServiceIcon} alt='service icon'/>
         <h3 class="service-title">Service 1</h3>
@@ -70,80 +70,55 @@ import ServiceIcon from '../assets/service-icon.png'
         font-weight: 700;
         color: var(--light-accent);
     }
-    .out {
+    @media screen and (min-width: 900px) {
+        .out {
         width: 50%;
-    }
-    .show {
-        visibility: visible;
-        animation: show-text .7s forwards;
-    }
-    @keyframes show-text {
-        40% {
-            opacity: 0;
-            transform: translateY(2rem);
         }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
+        .show {
+            visibility: visible;
+            animation: show-text .7s forwards;
+        }
+        @keyframes show-text {
+            40% {
+                opacity: 0;
+                transform: translateY(2rem);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
     @media screen and (max-width: 900px) {
-        .mobile-wrap {
-        flex-direction: column;
+        .service-cards {
+            flex-direction: column;
         }
         .service-card {
             width: 100%;
         }
-        .number {
-            bottom: 0;
+        .service-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 </style>
 <script>
-    
-    const updateServiceTextVisibility = () => {
-        const serviceTexts = document.querySelectorAll(".service-text");
-        if (window.innerWidth < 900) {
-            serviceTexts.forEach(text => text.classList.add('show'));
-        } else {
-            serviceTexts.forEach(text => text.classList.remove('show'));
-        }
-    };
-
-    updateServiceTextVisibility();
-
-    window.addEventListener('resize', updateServiceTextVisibility);
-
-
     const cards = document.querySelectorAll(".service-card");
 
-    const handleCardHover = () => {
-        if (window.innerWidth > 900) {
-            cards.forEach((item) => {
-                item.addEventListener("mouseenter", () => {
-                    cards.forEach((otherCard) => {
-                        if (otherCard !== item && otherCard.classList.contains("out")) {
-                            otherCard.classList.remove("out");
-                            const text = otherCard.querySelector(".service-text");
-                            if (text) text.classList.remove('show');
-                        }
-                    });
-
-                    item.classList.add("out");
-                    const text = item.querySelector(".service-text");
-                    if (text) text.classList.add('show');
-                });
+    cards.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            cards.forEach((otherCard) => {
+                if (otherCard !== item && otherCard.classList.contains("out")) {
+                    otherCard.classList.remove("out");
+                    const text = otherCard.querySelector(".service-text");
+                    if (text) text.classList.remove('show');
+                }
             });
-        } else {
-            // Remove any existing hover listeners to prevent unwanted behavior
-            cards.forEach((item) => {
-                const clone = item.cloneNode(true);
-                item.parentNode.replaceChild(clone, item);
-            });
-        }
-    };
 
-    handleCardHover();
-
-    window.addEventListener('resize', handleCardHover)
+            item.classList.add("out");
+            const text = item.querySelector(".service-text")
+            if (text) text.classList.add('show');
+        })
+    })
 </script>
